@@ -1,25 +1,30 @@
-package com.restaurant.model;
+package com.dmitrenko.restaurant.model;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.EnumSet;
 import java.util.Set;
 
 public class User extends AbstractBaseEntity{
     private String name;
     private String email;
     private String password;
+    private LocalDate registered;
     private Set<Role> roles;
-    private Date registered;
 
     public User() {
     }
 
-    public User(Integer id, String name, String email, String password, Set<Role> roles, Date registered) {
+    public User(Integer id, String name, String email, String password,Role role, Role... roles) {
+        this(id, name, email, password, LocalDate.now(), EnumSet.of(role, roles));
+    }
+
+    public User(Integer id, String name, String email, String password, LocalDate registered, Set<Role> roles) {
         super(id);
         this.name = name;
         this.email = email;
         this.password = password;
-        this.roles = roles;
         this.registered = registered;
+        this.roles = roles;
     }
 
     public String getName() {
@@ -54,11 +59,11 @@ public class User extends AbstractBaseEntity{
         this.roles = roles;
     }
 
-    public Date getRegistered() {
+    public LocalDate getRegistered() {
         return registered;
     }
 
-    public void setRegistered(Date registered) {
+    public void setRegistered(LocalDate registered) {
         this.registered = registered;
     }
 

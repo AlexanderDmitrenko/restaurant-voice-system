@@ -1,4 +1,4 @@
-package com.restaurant.web;
+package com.dmitrenko.restaurant.web;
 
 import org.slf4j.Logger;
 

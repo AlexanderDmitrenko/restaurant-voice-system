@@ -1,17 +1,17 @@
-package com.restaurant.model;
+package com.dmitrenko.restaurant.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Set;
 
 public class Menu extends AbstractBaseEntity{
     private Restaurant restaurant;
     private Set<Dish> dishes;
-    private Date date;
+    private LocalDate date;
 
     public Menu() {
     }
 
-    public Menu(Integer id, Restaurant restaurant, Set<Dish> dishes, Date date) {
+    public Menu(Integer id, Restaurant restaurant, Set<Dish> dishes, LocalDate date) {
         super(id);
         this.restaurant = restaurant;
         this.dishes = dishes;
@@ -34,11 +34,11 @@ public class Menu extends AbstractBaseEntity{
         this.dishes = dishes;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 }

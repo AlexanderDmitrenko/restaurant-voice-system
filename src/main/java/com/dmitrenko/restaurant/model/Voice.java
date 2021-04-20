@@ -1,16 +1,16 @@
-package com.restaurant.model;
+package com.dmitrenko.restaurant.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Voice extends AbstractBaseEntity{
     private User user;
     private Restaurant restaurant;
-    private Date date;
+    private LocalDate date;
 
     public Voice() {
     }
 
-    public Voice(Integer id, User user, Restaurant restaurant, Date date) {
+    public Voice(Integer id, User user, Restaurant restaurant, LocalDate date) {
         super(id);
         this.user = user;
         this.restaurant = restaurant;
@@ -29,11 +29,11 @@ public class Voice extends AbstractBaseEntity{
         this.restaurant = restaurant;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 }

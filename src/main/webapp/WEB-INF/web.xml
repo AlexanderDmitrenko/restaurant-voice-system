@@ -8,12 +8,22 @@
 
     <servlet>
         <servlet-name>userServlet</servlet-name>
-        <servlet-class>com.restaurant.web.UserServlet</servlet-class>
+        <servlet-class>com.dmitrenko.restaurant.web.UserServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>userServlet</servlet-name>
         <url-pattern>/users</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>dishServlet</servlet-name>
+        <servlet-class>com.dmitrenko.restaurant.web.DishServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dishServlet</servlet-name>
+        <url-pattern>/dishes</url-pattern>
     </servlet-mapping>
 
 </web-app>

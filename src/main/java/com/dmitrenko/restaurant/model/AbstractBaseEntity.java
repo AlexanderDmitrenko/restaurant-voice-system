@@ -1,4 +1,4 @@
-package com.restaurant.model;
+package com.dmitrenko.restaurant.model;
 
 public abstract class AbstractBaseEntity {
 
