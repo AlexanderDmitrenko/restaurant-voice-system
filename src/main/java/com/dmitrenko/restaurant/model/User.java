@@ -14,6 +14,10 @@ public class User extends AbstractBaseEntity{
     public User() {
     }
 
+    public User(User u){
+        this(u.getId(), u.getName(), u.getEmail(), u.getPassword(), u.getRegistered(), u.getRoles());
+    }
+
     public User(Integer id, String name, String email, String password,Role role, Role... roles) {
         this(id, name, email, password, LocalDate.now(), EnumSet.of(role, roles));
     }

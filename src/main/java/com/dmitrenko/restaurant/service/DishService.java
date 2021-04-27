@@ -2,6 +2,7 @@ package com.dmitrenko.restaurant.service;
 
 import com.dmitrenko.restaurant.model.Dish;
 import com.dmitrenko.restaurant.repository.DishRepository;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

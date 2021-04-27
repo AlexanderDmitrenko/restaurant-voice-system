@@ -10,6 +10,8 @@ public class Dish extends AbstractBaseEntity{
     public Dish() {
     }
 
+    public Dish(Dish d){this(d.getId(), d.getName(), d.getPrice(), d.getDate());}
+
     public Dish(String name, Integer price, LocalDate date) {
         this.name = name;
         this.price = price;
