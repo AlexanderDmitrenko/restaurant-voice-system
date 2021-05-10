@@ -1,4 +1,4 @@
-package com.dmitrenko.restaurant.web;
+package com.dmitrenko.restaurant;
 
 import com.dmitrenko.restaurant.model.Role;
 import com.dmitrenko.restaurant.model.User;

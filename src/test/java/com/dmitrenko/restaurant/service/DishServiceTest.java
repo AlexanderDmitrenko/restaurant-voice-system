@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-import static com.dmitrenko.restaurant.web.DishTestData.*;
+import static com.dmitrenko.restaurant.DishTestData.*;
 import static org.junit.Assert.*;
 
 //TODO переделать с помощью AssertJ как в учебном проекте

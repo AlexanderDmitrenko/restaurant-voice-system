@@ -3,7 +3,7 @@ package com.dmitrenko.restaurant.service;
 import com.dmitrenko.restaurant.model.Role;
 import com.dmitrenko.restaurant.model.User;
 import com.dmitrenko.restaurant.util.exception.NotFoundException;
-import com.dmitrenko.restaurant.web.UserTestData;
+import com.dmitrenko.restaurant.UserTestData;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-import static com.dmitrenko.restaurant.web.UserTestData.*;
+import static com.dmitrenko.restaurant.UserTestData.*;
 import static org.junit.Assert.assertThrows;
 
 
