@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 import static com.dmitrenko.restaurant.util.ValidationUtil.checkNotFoundWithId;
 
@@ -19,6 +20,7 @@ public class DishService {
     }
 
     public Dish create(Dish dish) {
+        Objects.requireNonNull(dish, "dish must not be null");
         return repository.save(dish);
     }
 
@@ -35,6 +37,7 @@ public class DishService {
     }
 
     public void update(Dish dish) {
+        Objects.requireNonNull(dish, "dish must not be null");
         checkNotFoundWithId(repository.save(dish), dish.getId());
     }
 }

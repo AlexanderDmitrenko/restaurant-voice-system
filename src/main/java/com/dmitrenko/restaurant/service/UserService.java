@@ -5,6 +5,7 @@ import com.dmitrenko.restaurant.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 import static com.dmitrenko.restaurant.util.ValidationUtil.checkNotFound;
 import static com.dmitrenko.restaurant.util.ValidationUtil.checkNotFoundWithId;
@@ -18,6 +19,7 @@ public class UserService {
     }
 
     public User create(User user) {
+        Objects.requireNonNull(user, "user must not be null");
         return repository.save(user);
     }
 
@@ -38,6 +40,7 @@ public class UserService {
     }
 
     public void update(User user) {
+        Objects.requireNonNull(user, "user must not be null");
         checkNotFoundWithId(repository.save(user), user.getId());
     }
 }
