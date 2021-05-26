@@ -2,6 +2,8 @@ package com.dmitrenko.restaurant.service;
 
 import com.dmitrenko.restaurant.model.User;
 import com.dmitrenko.restaurant.repository.UserRepository;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,10 +25,12 @@ public class UserService {
         return repository.save(user);
     }
 
+    @CacheEvict(value = "users", allEntries = true)
     public void delete(int id) {
         checkNotFoundWithId(repository.delete(id), id);
     }
 
+    @CacheEvict(value = "users", allEntries = true)
     public User get(int id) {
         return checkNotFoundWithId(repository.get(id), id);
     }
@@ -35,10 +39,12 @@ public class UserService {
         return checkNotFound(repository.getByEmail(email), "email=" + email);
     }
 
+    @Cacheable("users")
     public List<User> getAll() {
         return repository.getAll();
     }
 
+    @CacheEvict(value = "users", allEntries = true)
     public void update(User user) {
         Objects.requireNonNull(user, "user must not be null");
         checkNotFoundWithId(repository.save(user), user.getId());
