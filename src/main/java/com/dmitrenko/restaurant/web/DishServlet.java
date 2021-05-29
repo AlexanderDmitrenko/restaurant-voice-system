@@ -1,5 +1,6 @@
 package com.dmitrenko.restaurant.web;
 
+import com.dmitrenko.restaurant.Profiles;
 import com.dmitrenko.restaurant.web.dish.DishRestController;
 import org.slf4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -22,7 +23,9 @@ public class DishServlet extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        springContext = new ClassPathXmlApplicationContext("spring/spring-app.xml", "spring/spring-db.xml");
+        springContext = new ClassPathXmlApplicationContext(new String[]{"spring/spring-app.xml", "spring/spring-db.xml"}, false);
+        springContext.getEnvironment().setActiveProfiles(Profiles.REPOSITORY_IMPLEMENTATION);
+        springContext.refresh();
         dishController = springContext.getBean(DishRestController.class);
     }
 

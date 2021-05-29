@@ -3,12 +3,7 @@ package com.dmitrenko.restaurant.service;
 import com.dmitrenko.restaurant.model.Dish;
 import com.dmitrenko.restaurant.util.exception.NotFoundException;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.jdbc.SqlConfig;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
@@ -17,14 +12,8 @@ import static org.junit.Assert.*;
 
 //TODO переделать с помощью AssertJ как в учебном проекте
 
-@ContextConfiguration({
-        "classpath:spring/spring-app.xml",
-        "classpath:spring/spring-db.xml"
-})
-@RunWith(SpringRunner.class)
-@Sql(scripts = "classpath:/db/populateDB.sql", config = @SqlConfig(encoding = "UTF-8"))
-public class DishServiceTest {
 
+public abstract class AbstractDishServiceTest extends AbstractServiceTest {
 
     @Autowired
     private DishService service;
